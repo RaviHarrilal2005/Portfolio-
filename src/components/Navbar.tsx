@@ -1,5 +1,5 @@
 import { useAuth } from '../hooks/useAuth'
-import { navigation } from '../lib/constants'
+import { NAV_LINKS } from '../lib/constants'
 
 interface NavbarProps {
   onOpenCommandPalette: () => void
@@ -13,7 +13,7 @@ export function Navbar({ onOpenCommandPalette }: NavbarProps) {
       <nav aria-label="Main navigation" className="mx-auto flex max-w-5xl items-center justify-between gap-4">
         <a href="#top" className="font-bold text-cyan-300">CS Portfolio</a>
         <div className="hidden gap-5 sm:flex">
-          {navigation.map((item) => <a key={item.href} href={item.href} className="text-slate-200 hover:text-cyan-300">{item.label}</a>)}
+          {NAV_LINKS.map((item) => <a key={item.href} href={item.href} className="text-slate-200 hover:text-cyan-300">{item.label}</a>)}
         </div>
         <div className="flex items-center gap-2">
           <button onClick={onOpenCommandPalette} className="rounded border border-cyan-400/30 px-3 py-1 text-sm text-cyan-200" aria-label="Open command palette">⌘K</button>
