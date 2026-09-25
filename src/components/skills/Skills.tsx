@@ -8,17 +8,16 @@ export default function Skills() {
   return (
     <section id="skills" aria-labelledby="skills-heading" className="py-16">
       <div className="mb-8">
-        <p className="mb-2 text-sm uppercase tracking-[0.2em] text-cyber-cyan">// toolkit</p>
-        <h2 id="skills-heading" className="text-3xl font-bold text-cyber-text md:text-4xl">
-          Skills
+        <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-400">Technical Skills</p>
+        <h2 id="skills-heading" className="text-3xl font-bold text-gray-900 dark:text-white md:text-4xl">
+          Skills & Technologies
         </h2>
-        <p className="mt-3 max-w-2xl text-cyber-text/70">
-          A practical foundation in software engineering, from writing clean code to shipping
-          accessible interfaces.
+        <p className="mt-3 max-w-2xl text-gray-600 dark:text-gray-300">
+          A practical foundation in software engineering, from writing clean code to shipping accessible interfaces and scalable systems.
         </p>
       </div>
 
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid gap-6 sm:grid-cols-2">
         {skillCategories.map((category, index) => (
           <motion.div
             key={category.name}
@@ -28,12 +27,12 @@ export default function Skills() {
             transition={{ duration: 0.35, delay: index * 0.06 }}
           >
             <Card className="h-full">
-              <h3 className="mb-4 text-lg font-semibold text-cyber-cyan">{category.name}</h3>
+              <h3 className="mb-4 text-lg font-semibold text-gray-900 dark:text-white">{category.name}</h3>
               <ul className="flex flex-wrap gap-2" aria-label={`${category.name} skills`}>
                 {category.skills.map((skill) => (
                   <li
                     key={skill}
-                    className="rounded border border-cyber-cyan/25 bg-cyber-dark/60 px-3 py-1.5 text-sm text-cyber-text/90"
+                    className="rounded border border-gray-200 bg-gray-50 px-3 py-1.5 text-sm font-medium text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
                   >
                     {skill}
                   </li>

@@ -3,20 +3,25 @@ export default {
   theme: {
     extend: {
       colors: {
-        cyber: {
-          dark: '#0a0e27',
-          card: '#1a1f3a',
-          cyan: '#00f0ff',
-          amber: '#ffaa00',
-          green: '#00ff88',
-          text: '#e0e0ff',
+        primary: {
+          50: '#f0f4f8',
+          100: '#d9e2ec',
+          500: '#0066cc',
+          600: '#0052a3',
+          700: '#003d7a',
+          900: '#001a33',
+        },
+        accent: {
+          500: '#00a86b',
+          600: '#008c5c',
         },
       },
       fontFamily: {
-        mono: ['Monaco', 'Courier New', 'monospace'],
+        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        mono: ['Fira Code', 'Monaco', 'monospace'],
       },
       backdropBlur: {
-        glass: '10px',
+        sm: '4px',
       },
     },
   },

@@ -24,11 +24,11 @@ export default function GuestbookForm({ user, submitting, error, onSubmit }: Gue
     if (!result.error) setMessage('')
   }
 
-  if (!user) return <p className="text-slate-300">Sign in with GitHub to sign the guestbook.</p>
+  if (!user) return <p className="text-gray-600 dark:text-gray-300">Sign in with GitHub to sign the guestbook.</p>
 
   return (
-    <form onSubmit={(event) => void handleSubmit(event)} className="space-y-3">
-      <label htmlFor="guestbook-message" className="block text-sm text-slate-300">Leave a message</label>
+    <form onSubmit={(event) => void handleSubmit(event)} className="space-y-4">
+      <label htmlFor="guestbook-message" className="block text-sm font-medium text-gray-900 dark:text-white">Leave a message</label>
       <textarea
         id="guestbook-message"
         value={message}
@@ -36,11 +36,16 @@ export default function GuestbookForm({ user, submitting, error, onSubmit }: Gue
         rows={3}
         maxLength={500}
         disabled={submitting}
-        className="w-full rounded border border-cyan-400/30 bg-slate-950/70 p-3 text-slate-100 outline-none focus:border-cyan-300"
-        placeholder="Say hello..."
+        className="w-full rounded-lg border border-gray-300 bg-white p-3 text-gray-900 outline-none transition-colors placeholder:text-gray-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 disabled:bg-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:placeholder:text-gray-500 dark:focus:border-blue-400 dark:disabled:bg-gray-700"
+        placeholder="Share your thoughts..."
       />
-      {(validationError || error) && <p role="alert" className="text-sm text-red-300">{validationError || error}</p>}
-      <Button type="submit" disabled={submitting}>{submitting ? 'Posting…' : 'Post message'}</Button>
+      <div className="flex items-center justify-between">
+        <div>
+          {(validationError || error) && <p role="alert" className="text-sm font-medium text-red-600 dark:text-red-400">{validationError || error}</p>}
+        </div>
+        <span className="text-xs text-gray-500 dark:text-gray-400">{message.length}/500</span>
+      </div>
+      <Button type="submit" disabled={submitting}>{submitting ? 'Posting...' : 'Post message'}</Button>
     </form>
   )
 }

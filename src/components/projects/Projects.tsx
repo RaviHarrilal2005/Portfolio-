@@ -8,7 +8,7 @@ export default function Projects() {
 
   return (
     <section id="projects" aria-labelledby="projects-heading" className="py-16">
-      <h2 id="projects-heading" className="mb-8 text-3xl font-bold text-cyan-200">Projects</h2>
+      <h2 id="projects-heading" className="mb-8 text-3xl font-bold text-gray-900 dark:text-white">Projects</h2>
       {loading && <div className="py-12" role="status" aria-label="Loading projects"><Loading /></div>}
       {!loading && error && <Card><p role="alert" className="text-amber-300">{error}</p></Card>}
       {!loading && !error && projects.length === 0 && <Card><p className="text-slate-300">No projects are available yet.</p></Card>}
