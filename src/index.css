@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-cyan: #00f0ff;
+  --color-amber: #ffaa00;
+  --color-green: #00ff88;
+  --color-bg-primary: #0a0e27;
+  --color-bg-secondary: #1a1f3a;
+  --color-text-primary: #e0e0ff;
+  --color-text-secondary: #a0a0cc;
+  --glass-bg: rgba(10, 14, 39, 0.8);
+  --glass-border: rgba(0, 240, 255, 0.2);
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: Monaco, 'Courier New', monospace;
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 240, 255, 0.1);
+}
+
+.glass-card:hover {
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+}
+
+.neon-glow {
+  color: var(--color-cyan);
+  text-shadow: 0 0 10px var(--color-cyan), 0 0 20px var(--color-cyan);
+}
+
+.scanlines::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+}
